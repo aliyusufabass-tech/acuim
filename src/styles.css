@@ -123,3 +123,8 @@ input:focus, textarea:focus { outline: 2px solid rgba(201,164,92,.4); border-col
 
 
 
+
+.activity-card { position: relative; padding-top: 54px; }
+.activity-card .card-number { top: 18px; right: 22px; }
+.services-hero { background-size: cover; background-position: center; }
+

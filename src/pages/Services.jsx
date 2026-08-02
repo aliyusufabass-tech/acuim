@@ -1,24 +1,32 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ServiceCard } from "../components/Cards";
 import SectionHeader from "../components/SectionHeader";
-import { serviceCategories, services as fallbackServices } from "../data/content";
+import { fallbackImage, services as fallbackServices } from "../data/content";
 import { useApi } from "../hooks/useApi";
 
 export default function Services() {
-  const [filter, setFilter] = useState("All");
   const { data } = useApi("/services/", fallbackServices);
   const allServices = data?.length ? data : fallbackServices;
-  const visible = filter === "All" ? allServices : allServices.filter((service) => service.category === filter || service.title.includes(filter));
 
   return (
     <>
-      <section className="page-hero"><span className="eyebrow">Services</span><h1>Engineering, planning, technology and advisory services for sustainable development.</h1></section>
-      <section className="section">
-        <SectionHeader title="Professional services" text="Explore the capabilities ACUIM brings to infrastructure, cities, built environments and secure digital systems." />
-        <div className="filters">{serviceCategories.map((item) => <button className={filter === item ? "active" : ""} onClick={() => setFilter(item)} key={item}>{item}</button>)}</div>
-        <div className="card-grid">{visible.map((service, index) => <ServiceCard key={service.slug} service={service} index={index} />)}</div>
+      <section className="page-hero services-hero" style={{ backgroundImage: `linear-gradient(90deg, rgba(10,10,10,.76), rgba(10,10,10,.22)), url(${fallbackImage})` }}>
+        <div>
+          <span className="eyebrow">Services</span>
+          <h1>Our Services</h1>
+          <p>ACUIM Development Ltd delivers integrated expertise across engineering, architecture, infrastructure, urban development, environmental planning, geospatial technology and strategic consulting. Our multidisciplinary approach helps clients plan, design and deliver sustainable, resilient and high-performing projects.</p>
+        </div>
       </section>
-      <section className="section dark-band"><SectionHeader eyebrow="Integrated expertise" title="One coordinated team across strategy, design and delivery." text="Our service model reduces silos across technical studies, planning, construction, environment and technology." /></section>
+
+      <section className="section">
+        <SectionHeader title="Integrated capabilities" text="Explore all available ACUIM service areas. Each card opens a dedicated detail page with capabilities, approach and related work." />
+        <div className="card-grid">{allServices.map((service, index) => <ServiceCard key={service.slug} service={service} index={index} />)}</div>
+      </section>
+
+      <section className="cta-band">
+        <h2>Need a coordinated team for your next project?</h2>
+        <Link className="button" to="/contact">Contact ACUIM</Link>
+      </section>
     </>
   );
 }
