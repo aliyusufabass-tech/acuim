@@ -1,4 +1,18 @@
 import heroImage from "../assets/images/acuim-hero.png";
+import advisoryImage from "../assets/images/ADVISORY AND STRATEGIC CONSULTING.jpeg";
+import architectureImage from "../assets/images/ARCHITECTURE.jpeg";
+import citiesImage from "../assets/images/CITIES SOLUTION.jpeg";
+import constructionManagementImage from "../assets/images/CONSTRUCTION MANAGEMENT.jpeg";
+import engineeringImage from "../assets/images/ENGINEERING.jpeg";
+import environmentalImage from "../assets/images/ENVIRONMENTAL SERVICES.jpeg";
+import geospatialImage from "../assets/images/GEOSPATIAL SERVICE.jpeg";
+import infrastructureImage from "../assets/images/INFRASTRUCTURE CONSTRUCTION.jpeg";
+import cybersecurityImage from "../assets/images/IT AND CYBERSECURITY.jpeg";
+import landscapeImage from "../assets/images/LANDSCAPE ARCHITECTURE.jpeg";
+import pedestrianImage from "../assets/images/PEDESTRIAL MODELING.jpeg";
+import publicRealmImage from "../assets/images/PUBLIC REALM AND OPEN SPACE DEVELOPMENT.jpeg";
+import urbanAnalyticsImage from "../assets/images/URBAN ANALUTICS.jpeg";
+import urbanismImage from "../assets/images/URBANISM AND PLANNING.jpeg";
 import {
   Building2,
   Cpu,
@@ -17,6 +31,23 @@ import {
 } from "lucide-react";
 
 export const fallbackImage = heroImage;
+
+export const serviceImages = {
+  Engineering: engineeringImage,
+  "Architecture Design": architectureImage,
+  "Public Realm and Open Space Development": publicRealmImage,
+  "Infrastructure Construction": infrastructureImage,
+  "Construction Management": constructionManagementImage,
+  "Urban Analytics": urbanAnalyticsImage,
+  "Geospatial Services": geospatialImage,
+  "Urbanism and Planning": urbanismImage,
+  "Landscape Architecture": landscapeImage,
+  "Pedestrian Modeling": pedestrianImage,
+  "Cities Solutions": citiesImage,
+  "Advisory and Strategic Consulting": advisoryImage,
+  "Environmental Services": environmentalImage,
+  "IT and Cybersecurity": cybersecurityImage,
+};
 
 export const serviceCategories = ["All", "Engineering", "Design", "Planning", "Technology", "Environment"];
 
@@ -44,8 +75,8 @@ export const services = [
   Icon,
   icon: Icon.name,
   category,
-  card_image: heroImage,
-  hero_image: heroImage,
+  card_image: serviceImages[title] || heroImage,
+  hero_image: serviceImages[title] || heroImage,
   capabilities: ["Strategic assessment", "Technical design", "Implementation support", "Performance review"],
   benefits: ["Resilient outcomes", "Efficient delivery", "Clear decision-making", "Sustainable value"],
   approach: ["Discover", "Plan", "Design", "Deliver", "Improve"],

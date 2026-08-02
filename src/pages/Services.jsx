@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { fallbackImage, services as fallbackServices } from "../data/content";
+import { fallbackImage, serviceImages, services as fallbackServices } from "../data/content";
 import { useApi } from "../hooks/useApi";
 
 const serviceGroups = [
@@ -57,6 +57,7 @@ export default function Services() {
                     if (!service) return null;
                     return (
                       <Link className="service-directory-link" to={`/services/${service.slug}`} key={name}>
+                        <img src={service.card_image || serviceImages[service.title] || fallbackImage} alt={`${service.title} service`} loading="lazy" />
                         <span>{service.title}</span>
                         <ArrowRight size={17} />
                       </Link>
@@ -85,3 +86,5 @@ export default function Services() {
     </>
   );
 }
+
+

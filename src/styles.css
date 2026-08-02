@@ -238,3 +238,19 @@ input:focus, textarea:focus { outline: 2px solid rgba(201,164,92,.4); border-col
     grid-template-columns: 1fr;
   }
 }
+.service-directory-link img {
+  width: 74px;
+  height: 52px;
+  object-fit: cover;
+  flex: 0 0 auto;
+  border: 1px solid rgba(0,0,0,.1);
+}
+.service-directory-link span {
+  flex: 1 1 auto;
+}
+@media (max-width: 560px) {
+  .service-directory-link img {
+    width: 64px;
+    height: 48px;
+  }
+}

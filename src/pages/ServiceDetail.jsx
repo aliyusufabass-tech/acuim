@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { imageUrl, ServiceCard } from "../components/Cards";
 import SectionHeader from "../components/SectionHeader";
-import { projects, services as fallbackServices } from "../data/content";
+import { projects, serviceImages, services as fallbackServices } from "../data/content";
 import { useApi } from "../hooks/useApi";
 
 const activityTemplates = {
@@ -30,7 +30,7 @@ export default function ServiceDetail() {
 
   return (
     <>
-      <section className="detail-hero" style={{ backgroundImage: `linear-gradient(90deg, rgba(10,10,10,.74), rgba(10,10,10,.25)), url(${imageUrl(service.hero_image)})` }}>
+      <section className="detail-hero" style={{ backgroundImage: `linear-gradient(90deg, rgba(10,10,10,.74), rgba(10,10,10,.25)), url(${imageUrl(service.hero_image || serviceImages[service.title])})` }}>
         <div>
           <span className="eyebrow">Service</span>
           <h1>{service.title}</h1>
@@ -89,3 +89,4 @@ function DetailList({ title, items = [] }) {
 function activityDescription(serviceTitle, activity) {
   return `${activity} supports ACUIM clients with practical ${serviceTitle.toLowerCase()} input, clear coordination and delivery-focused recommendations.`;
 }
+
