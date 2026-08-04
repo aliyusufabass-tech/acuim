@@ -254,3 +254,20 @@ input:focus, textarea:focus { outline: 2px solid rgba(201,164,92,.4); border-col
     height: 48px;
   }
 }
+.service-image-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding-top: 0;
+}
+.service-image-strip img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+@media (max-width: 700px) {
+  .service-image-strip {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { imageUrl, ServiceCard } from "../components/Cards";
 import SectionHeader from "../components/SectionHeader";
-import { projects, serviceImages, services as fallbackServices } from "../data/content";
+import { projects, serviceGalleryImages, serviceImages, services as fallbackServices } from "../data/content";
 import { useApi } from "../hooks/useApi";
 
 const activityTemplates = {
@@ -27,6 +27,7 @@ export default function ServiceDetail() {
   const { data } = useApi(`/services/${slug}/`, fallback);
   const service = data || fallback;
   const activities = activityTemplates[service.title] || ["Planning and Assessment", "Design and Technical Delivery", "Project Support and Implementation"];
+  const galleryImages = serviceGalleryImages[service.title] || [];
 
   return (
     <>
@@ -89,4 +90,6 @@ function DetailList({ title, items = [] }) {
 function activityDescription(serviceTitle, activity) {
   return `${activity} supports ACUIM clients with practical ${serviceTitle.toLowerCase()} input, clear coordination and delivery-focused recommendations.`;
 }
+
+
 

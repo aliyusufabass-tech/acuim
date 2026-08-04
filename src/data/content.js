@@ -1,18 +1,24 @@
 import heroImage from "../assets/images/acuim-hero.png";
 import advisoryImage from "../assets/images/ADVISORY AND STRATEGIC CONSULTING.jpeg";
 import architectureImage from "../assets/images/ARCHITECTURE.jpeg";
+import architectureImageOne from "../assets/images/picha 8.jpeg";
+import architectureImageTwo from "../assets/images/picha 9.jpeg";
+import architectureImageThree from "../assets/images/picha 10.jpeg";
 import citiesImage from "../assets/images/CITIES SOLUTION.jpeg";
 import constructionManagementImage from "../assets/images/CONSTRUCTION MANAGEMENT.jpeg";
 import engineeringImage from "../assets/images/ENGINEERING.jpeg";
 import environmentalImage from "../assets/images/ENVIRONMENTAL SERVICES.jpeg";
 import geospatialImage from "../assets/images/GEOSPATIAL SERVICE.jpeg";
 import infrastructureImage from "../assets/images/INFRASTRUCTURE CONSTRUCTION.jpeg";
+import infrastructureImageOne from "../assets/images/picha 3.jpeg";
+import infrastructureImageTwo from "../assets/images/picha 4.jpeg";
 import cybersecurityImage from "../assets/images/IT AND CYBERSECURITY.jpeg";
 import landscapeImage from "../assets/images/LANDSCAPE ARCHITECTURE.jpeg";
 import pedestrianImage from "../assets/images/PEDESTRIAL MODELING.jpeg";
 import publicRealmImage from "../assets/images/PUBLIC REALM AND OPEN SPACE DEVELOPMENT.jpeg";
 import urbanAnalyticsImage from "../assets/images/URBAN ANALUTICS.jpeg";
-import urbanismImage from "../assets/images/URBANISM AND PLANNING.jpeg";
+import urbanismPlanImageOne from "../assets/images/picha 1.jpeg";
+import urbanismPlanImageTwo from "../assets/images/picha 2.jpeg";
 import {
   Building2,
   Cpu,
@@ -34,19 +40,25 @@ export const fallbackImage = heroImage;
 
 export const serviceImages = {
   Engineering: engineeringImage,
-  "Architecture Design": architectureImage,
+  "Architecture Design": architectureImageOne,
   "Public Realm and Open Space Development": publicRealmImage,
-  "Infrastructure Construction": infrastructureImage,
+  "Infrastructure Construction": infrastructureImageOne,
   "Construction Management": constructionManagementImage,
   "Urban Analytics": urbanAnalyticsImage,
   "Geospatial Services": geospatialImage,
-  "Urbanism and Planning": urbanismImage,
+  "Urbanism and Planning": urbanismPlanImageOne,
   "Landscape Architecture": landscapeImage,
   "Pedestrian Modeling": pedestrianImage,
   "Cities Solutions": citiesImage,
   "Advisory and Strategic Consulting": advisoryImage,
   "Environmental Services": environmentalImage,
   "IT and Cybersecurity": cybersecurityImage,
+};
+
+export const serviceGalleryImages = {
+  "Architecture Design": [architectureImageOne, architectureImageTwo, architectureImageThree],
+  "Urbanism and Planning": [urbanismPlanImageOne, urbanismPlanImageTwo],
+  "Infrastructure Construction": [infrastructureImageOne, infrastructureImageTwo],
 };
 
 export const serviceCategories = ["All", "Engineering", "Design", "Planning", "Technology", "Environment"];
@@ -171,3 +183,9 @@ export const insights = [
     featured_image: heroImage,
   },
 ];
+
+
+
+
+
+
